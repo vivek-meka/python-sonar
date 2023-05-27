@@ -1,0 +1,5 @@
+python -m pytest tests/ --cov=src --cov-report=xml -vv
+sonar-scanner.bat -D"sonar.projectKey=python-test" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_744f4f990155fd7bcf19d1606a2ef3f5634a90f8"
+
+
+docker run --rm -e SONAR_HOST_URL="http://localhost:9000" -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=python-test" -e SONAR_TOKEN="sqp_744f4f990155fd7bcf19d1606a2ef3f5634a90f8" -v "E:\Learnings\python\python-with-unit-testing:/usr/src" sonarsource/sonar-scanner-cli
